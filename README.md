@@ -8,12 +8,12 @@ Description: A simple script to add flair to your shell prompt.
 
 First we need to install `myip` from either the AUR or the clone the repository from Github [MyIP](https://github.com/make-github-pseudonymous-again/myip).
 
-<u>AUR</u>
+<u><b>AUR</b></u>
 
 ```bash
 yay -S myip
 ```
-<u>Github</u>
+<u><b>Github</b></u>
 
 ```bash
 git clone https://github.com/make-github-pseudonymous-again/myip
@@ -21,8 +21,8 @@ cd myip
 sudo make DESTDIR=/ PREFIX=/usr install
 ```
 
-Now we make our personal bin direcotry and add it to our path.
-this is where we will keep our custom scripts.
+Now we make our personal bin direcotry and add it to our path. <br>
+This is where we will keep our custom scripts.
 
 ```bash
 mkdir -p ~/.bin
@@ -32,8 +32,8 @@ echo 'export PATH="$HOME/.bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Now we need to make the script myweather for our shell prompt.
-Edit the "YOUR_CITY_HERE" to your city.
+Now we need to make the script `myweather` for our shell prompt. <br>
+Edit **"YOUR_CITY_HERE"** to your city.
 
 ```bash
 #!/usr/bin/env bash
@@ -43,14 +43,14 @@ curl -w -s 'v2.wttr.in/%20%20%20%20%20%20%20%20YOUR_CITY_HERE?u&format=%l\n%20%2
 echo -e "\n"
 ```
 
-Name this file `myweather` and put it in your ~/.bin directory.
+Add it to the `~/.bin` directory and make it executable.
 
 ```bash
 mv myweather ~/.bin
 chmod +x ~/.bin/myweather
 ```
 
-Add these color environment variable to your .bashrc
+Add these color environment variable to your `.bashrc`
 
 ```bash
 ##----------------------------------------------------------
@@ -98,7 +98,7 @@ export ALERT="${BRed}${BLINK}"             # Bold Red On Black Background
 export DANGER="${BRed}${On_White}${BLINK}" # Blinking Bold Red On White Background
 ```
 
-Now add this funtion to your .bashrc.
+Now add this funtion to your `.bashrc`
 
 ```bash
 [ "$TERM" = "xterm-256color" ] &&
@@ -112,9 +112,10 @@ Now add this funtion to your .bashrc.
 fi
 ```
 
-This fuction is going to display the **weather** for your **city** and your ***public*** and ***private*** **IP** addresses as a **warning**, so you know to change it if need be. A vpn or a proxy will work just fine.
+This fuction is going to display the **weather** for your **city** and your ***public*** and ***private*** **IP** addresses as a **warning**. <br>
+So you know to change it if need be. <br>
 
-And this is what it should look like when all is said and done.
-One clip with the script running as is and the other split up with a `clear &&` after `sleep 1` <br>
+And this is what it should look like when all is said and done. <br>
+One clip with the script running as is and the other split up with `clear &&` added after `sleep 1` in the function.<br>
 ![Shell Prompt Flair](https://gitlab.com/mrgofuckyourself/shell-prompt-flair/-/blob/main/prompt.mp4)
 ![Shell Prompt Flair Split](https://gitlab.com/mrgofuckyourself/shell-prompt-flair/-/blob/main/prompt2.mp4)
