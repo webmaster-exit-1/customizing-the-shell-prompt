@@ -115,6 +115,6 @@ fi
 This fuction is going to display the **weather** for your **city** and your ***public*** and ***private*** **IP** addresses as a **warning**, so you know to change it if need be. A vpn or a proxy will work just fine.
 
 And this is what it should look like when all is said and done.
-One clip with the script running as is and the other split up with a `clear &&` after `sleep 1`
+One clip with the script running as is and the other split up with a `clear &&` after `sleep 1` <br>
 ![Shell Prompt Flair](https://gitlab.com/mrgofuckyourself/shell-prompt-flair/-/blob/main/prompt.mp4)
 ![Shell Prompt Flair Split](https://gitlab.com/mrgofuckyourself/shell-prompt-flair/-/blob/main/prompt2.mp4)
