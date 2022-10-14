@@ -118,6 +118,10 @@ So you know to change it if need be. <br>
 And this is what it should look like when all is said and done. <br>
 One clip with the script running as is and the other split up with `clear &&` added after `sleep 1` in the function.<br>
 
-![prompt](https://user-images.githubusercontent.com/98633966/195937159-81ed1f09-9ceb-47e8-95ec-177fd136a97c.mp4)
 
-![prompt2](https://user-images.githubusercontent.com/98633966/195937146-9e9ce07d-f691-4bf4-8a74-0932cd8ddc45.mp4)
+https://user-images.githubusercontent.com/98633966/195940771-111df364-9c2b-4975-8c6e-ebcfe5bfd559.mp4
+
+
+https://user-images.githubusercontent.com/98633966/195940811-bba59d32-4db6-4bd9-8723-1b35909f36b8.mp4
+
+
