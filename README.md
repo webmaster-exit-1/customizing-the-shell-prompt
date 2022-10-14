@@ -6,7 +6,7 @@
 
 Author: Mr.GFY <br>
 Description: A simple script to add flair to your shell prompt. <br>
-It's really more of an excersive in adding color to text output, And should be viewed as such. <br> 
+It's really more of an exercise in adding color to text output, And should be viewed as such. <br> 
 Use what is done here to create your own unique terminal prompt styles and themes.
 
 ## Getting started
