@@ -50,7 +50,7 @@ mv myweather ~/.bin
 chmod +x ~/.bin/myweather
 ```
 
-Add these color environment variable to your `.bashrc`
+Add these color environment variables to your `.bashrc`
 
 ```bash
 ##----------------------------------------------------------
@@ -117,5 +117,7 @@ So you know to change it if need be. <br>
 
 And this is what it should look like when all is said and done. <br>
 One clip with the script running as is and the other split up with `clear &&` added after `sleep 1` in the function.<br>
-![Shell Prompt Flair](https://gitlab.com/mrgofuckyourself/shell-prompt-flair/-/blob/main/prompt.mp4)
-![Shell Prompt Flair Split](https://gitlab.com/mrgofuckyourself/shell-prompt-flair/-/blob/main/prompt2.mp4)
+
+![prompt](https://user-images.githubusercontent.com/98633966/195937159-81ed1f09-9ceb-47e8-95ec-177fd136a97c.mp4)
+
+![prompt2](https://user-images.githubusercontent.com/98633966/195937146-9e9ce07d-f691-4bf4-8a74-0932cd8ddc45.mp4)
