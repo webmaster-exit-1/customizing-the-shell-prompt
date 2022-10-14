@@ -68,4 +68,4 @@ This fuction is going to display the **weather** for your **city** and your ***p
 
 And this is what it should look like when all is said and done.
 
-[!prompt-flair](https://user-images.githubusercontent.com/68724228/111083111-1b2b4a00-84d9-11eb-9b9a-1b2b4a0d9b9a.mp4)
+[!prompt-flair]()
