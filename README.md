@@ -104,7 +104,7 @@ export ALERT="${BRed}${BLINK}"             # Bold Red On Black Background
 export DANGER="${BRed}${On_White}${BLINK}" # Blinking Bold Red On White Background
 ```
 
-Now add this funtion to your `.bashrc`
+Now add this function to your `.bashrc`
 
 ```bash
 [ "$TERM" = "xterm-256color" ] &&
