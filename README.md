@@ -68,4 +68,4 @@ This fuction is going to display the **weather** for your **city** and your ***p
 
 And this is what it should look like when all is said and done.
 
-![](https://gitlab.com/mrgofuckyourself/shell-prompt-flair/-/blob/main/prompt-flair.mp4)
+![Shell Prompt Flair](https://gitlab.com/mrgofuckyourself/shell-prompt-flair/-/blob/main/prompt-flair.mp4)
