@@ -68,4 +68,8 @@ This fuction is going to display the **weather** for your **city** and your ***p
 
 And this is what it should look like when all is said and done.
 
+<video width="320" height="240" controls>
+  <source src="prompt-flair.mp4" type="video/mp4">
+</video>
+
 ![Shell Prompt Flair](https://gitlab.com/mrgofuckyourself/shell-prompt-flair/-/blob/main/prompt-flair.mp4)
