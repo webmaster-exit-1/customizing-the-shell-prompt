@@ -118,7 +118,7 @@ Now add this function to your `.bashrc`
 fi
 ```
 
-This fuction is going to display the **weather** for your **city** and your ***public*** and ***private*** **IP** addresses as a **warning**. <br>
+This function is going to display the **weather** for your **city** and your ***public*** and ***private*** **IP** addresses as a **warning**. <br>
 So you know to change it if need be. <br>
 
 And this is what it should look like when all is said and done. <br>
