@@ -1,29 +1,35 @@
 <!-- Markdownlint-disable -->
-# Shell Prompt Flair
+    
+<h1>Shell Prompt Flair</h1>
+
+-----------------------------------------------------------------------------------------------------
 
 Author: Mr.GFY <br>
-Description: A simple script to add flair to your shell prompt.
+Description: A simple script to add flair to your shell prompt. <br>
+It's really more of an excersive in adding color to text output, And should be viewed as such. <br> 
+Use what is done here to create your own unique terminal prompt styles and themes.
 
 ## Getting started
 
 First we need to install `myip` from either the AUR or the clone the repository from Github [MyIP](https://github.com/make-github-pseudonymous-again/myip).
 
-<u><b>AUR</b></u>
+<h4><u>AUR</u></h4>
 
 ```bash
 yay -S myip
 ```
-<u><b>Github</b></u>
+
+<h4><u>Github</u></h4>
 
 ```bash
 git clone https://github.com/make-github-pseudonymous-again/myip
 cd myip
 sudo make DESTDIR=/ PREFIX=/usr install
 ```
-
+    
 Now we make our personal bin direcotry and add it to our path. <br>
 This is where we will keep our custom scripts.
-
+    
 ```bash
 mkdir -p ~/.bin
 cp /usr/bin/myip ~/.bin/myip
@@ -31,20 +37,20 @@ sudo chown $USER:$USER --reducersive ~/.bin
 echo 'export PATH="$HOME/.bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
-
+    
 Now we need to make the script `myweather` for our shell prompt. <br>
 Edit **"YOUR_CITY_HERE"** to your city.
-
+    
 ```bash
 #!/usr/bin/env bash
 
 echo -e "$(clear)\n"
-curl -w -s 'v2.wttr.in/%20%20%20%20%20%20%20%20YOUR_CITY_HERE?u&format=%l\n%20%20%20%20Current%20Weather%20Forecast\n*%20Currently%20the%20temp.%20is:%20%c%t\n*%20But%20feels%20like:%20%f\n*%20With%20a%20U.V.%20index%20of:%20%u\n*%20Todays%20Sunrise%20is%20at:%20%S\n*%20Tonights%20Sunset%20is%20at:%20%s' 2>/dev/null
+curl -w -s 'v2.wttr.in/%20%20%20%20%20%20%20%20YOUR_CITY_HERE?u&format=%l\n%20%20%20%20Current%20Weather%20Forecast\n*%20Currently%20the%20temp. %20is:%20%c%t\n*%20But%20feels%20like:%20%f\n*%20With%20a%20U.V.%20index%20of:%20%u\n*%20Todays%20Sunrise%20is%20at:%20%S\n*%20Tonights%20Sunset%20is%20at:%20%s' 2>/dev/null
 echo -e "\n"
 ```
-
+    
 Add it to the `~/.bin` directory and make it executable.
-
+    
 ```bash
 mv myweather ~/.bin
 chmod +x ~/.bin/myweather
@@ -123,5 +129,3 @@ https://user-images.githubusercontent.com/98633966/195940771-111df364-9c2b-4975-
 
 
 https://user-images.githubusercontent.com/98633966/195940811-bba59d32-4db6-4bd9-8723-1b35909f36b8.mp4
-
-
