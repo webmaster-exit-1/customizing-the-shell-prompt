@@ -1,25 +1,23 @@
 <!-- Markdownlint-disable -->
     
-<h1>Shell Prompt Flair</h1>
+<h1>Examples for Customizing the Shell Prompt</h1>
 
 -----------------------------------------------------------------------------------------------------
 
-Author: Mr.GFY <br>
-Description: A simple script to add flair to your shell prompt. <br>
-It's really more of an exercise in adding color to text output, And should be viewed as such. <br> 
-Use what is done here to create your own unique terminal prompt styles and themes.
+Description: Just some examples of what you can add to your shell prompt to make it your own. <br>
+I hope this helps anyone to create your own unique terminal prompt styles and themes.
 
 ## Getting started
 
 First we need to install `myip` from either the AUR or the clone the repository from Github [MyIP](https://github.com/make-github-pseudonymous-again/myip).
 
-<h4><u>AUR</u></h4>
+Install from the AUR
 
 ```bash
 yay -S myip
 ```
 
-<h4><u>Github</u></h4>
+Or clone from Github
 
 ```bash
 git clone https://github.com/make-github-pseudonymous-again/myip
@@ -42,8 +40,6 @@ Now we need to make the script `myweather` for our shell prompt. <br>
 Edit **"YOUR_CITY_HERE"** to your city.
     
 ```bash
-#!/usr/bin/env bash
-
 echo -e "$(clear)\n"
 curl -w -s 'v2.wttr.in/%20%20%20%20%20%20%20%20YOUR_CITY_HERE?u&format=%l\n%20%20%20%20Current%20Weather%20Forecast\n*%20Currently%20the%20temp. %20is:%20%c%t\n*%20But%20feels%20like:%20%f\n*%20With%20a%20U.V.%20index%20of:%20%u\n*%20Todays%20Sunrise%20is%20at:%20%S\n*%20Tonights%20Sunset%20is%20at:%20%s' 2>/dev/null
 echo -e "\n"
