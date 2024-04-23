@@ -99,6 +99,7 @@ export BLINK='\e[5m'      # Blinking Text
 export ALERT="${BRed}${BLINK}"             # Bold Red On Black Background
 export DANGER="${BRed}${On_White}${BLINK}" # Blinking Bold Red On White Background
 ```
+### Advanced Colorization and Animated Text
 
 Now add this function to your `.bashrc`
 
@@ -120,6 +121,101 @@ So you know to change it if need be. <br>
 And this is what it should look like when all is said and done. <br>
 One clip with the script running as is and the other split up with `clear &&` added after `sleep 1` in the function.<br>
 
+### Example for On-Screen Early Alert System
+
+Here's a working example to detect when fail2ban has detected a failed login attempt and then display a warning on the screen:
+
+```bash
+#!/bin/bash
+
+# Define color codes and formatting options
+BRed='\033[1;31m'
+On_White='\033[47m'
+BLINK='\033[5m'
+END='\033[0m' # Reset color and formatting
+
+# Define the warning message with animation
+DANGER="${BRed}${On_White}${BLINK}SSH Failed Login Attempt Detected!${END}"
+
+# Check if fail2ban has detected a failed login attempt
+if grep -q "Ban " /var/log/fail2ban.log; then
+    # Display the warning message on screen
+    echo -e "$DANGER"
+fi
+```
+
+(Though that isn't really practical, just more of a "working" exercise. Here's a more reasonable way to achive this)
+
+```bash
+#!/bin/bash
+
+# Check if fail2ban has detected a failed login attempt
+if grep -q "Ban " /var/log/fail2ban.log; then
+    # Send a desktop notification using zenity
+    zenity --warning --text="A failed login attempt has been detected." --urgency=critical --timeout=3600
+fi
+```
+
+In this modified script, we use `zenity` with the `--warning` option to display a 
+warning dialog with a message indicating that a failed login attempt has been detected. 
+The `--urgency=critical` option sets the urgency level to high, and the `--timeout=3600` 
+option sets the timeout to 1 hour.
+
+To run this script, you would save it to a file, for example `ssh_warning_zenity.sh`, 
+give it execute permissions using `chmod +x ssh_warning_zenity.sh`, and then execute it in a terminal.
+
+Please note that `zenity` is a command-line utility that is typically available on most Linux distributions. 
+If you're using a different operating system or if `zenity` is not installed, you would
+need to find an equivalent command or library for sending desktop notifications on that platform.
+
+Using `zenity` provides a more interactive and user-friendly experience compared to a simple 
+text-based warning on the screen. It allows the user to quickly acknowledge the notification 
+and take appropriate action if needed.
+
+Remember to adjust the timing and path to the script in the `cron` job or `systemd` service configuration 
+file according to your specific requirements.
+
+Here's an example of how you could set up a `cron` job to run the script every minute:
+
+```bash
+# Edit the crontab file
+crontab -e
+
+# Add the following line to run the script every minute
+* * * * * /path/to/ssh_warning_notify_bell.sh
+```
+
+In this example, the `ssh_warning_notify_bell.sh` script is set to run every minute. 
+You would need to replace `/path/to/` with the actual path to the script on your system.
+
+Alternatively, you could set up a `systemd` service to run the script on boot or at a specific interval. 
+Here's an example of a `systemd` service configuration file:
+
+```ini
+[Unit]
+Description=SSH Failed Login Attempt Notification
+
+[Service]
+ExecStart=/path/to/ssh_warning_notify_bell.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+```
+
+Save this file as `ssh_warning.service` in the `/etc/systemd/system/` directory and then 
+run the following commands to enable and start the service:
+
+```bash
+sudo systemctl enable ssh_warning.service
+sudo systemctl start ssh_warning.service
+```
+
+By setting up a `cron` job or a `systemd` service, you ensure that the script runs automatically
+in the background without any user interaction. The script will check for failed login
+attempts and send desktop notifications with an audible bell if necessary.
+
+## Visual Examples :) 
 
 https://user-images.githubusercontent.com/98633966/195940771-111df364-9c2b-4975-8c6e-ebcfe5bfd559.mp4
 
