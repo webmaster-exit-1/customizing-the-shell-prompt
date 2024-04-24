@@ -144,7 +144,7 @@ if grep -q "Ban " /var/log/fail2ban.log; then
 fi
 ```
 
-(Though that isn't really practical, just more of a "working" exercise. Here's a more reasonable way to achive this)
+(Though that isn't really practical, just more of a "working" exercise. Here's a more reasonable way to achieve this)
 
 ```bash
 #!/bin/bash
