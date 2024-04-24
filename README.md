@@ -219,5 +219,9 @@ attempts and send desktop notifications with an audible bell if necessary.
 
 https://user-images.githubusercontent.com/98633966/195940771-111df364-9c2b-4975-8c6e-ebcfe5bfd559.mp4
 
+- In this next example the function clears the screen after the weather and before the network warning.
+- Notice the artistic difference from the previous video where the text ends on the same column and the centered text. Small changes, (visualy) big differences.
 
 https://user-images.githubusercontent.com/98633966/195940811-bba59d32-4db6-4bd9-8723-1b35909f36b8.mp4
+
+# Happy Hacking
