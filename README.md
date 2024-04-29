@@ -104,14 +104,27 @@ export DANGER="${BRed}${On_White}${BLINK}" # Blinking Bold Red On White Backgrou
 Now add this function to your `.bashrc`
 
 ```bash
-[ "$TERM" = "xterm-256color" ] &&
-    function myweather() {
-      ~/.bin/myweather
-    }
-    if [ -x ~/.bin/myweather ]; then
-    echo -e "${Blue}$(~/.bin/myweather)${NC}" | pv -qL $((18+(-3 + RANDOM%5))) && sleep 1 &&
-    echo -e "${Green}.................${NC}${BRed}${BLINK}WARNING${NC}${Green}.................${NC}\n${BPurple} --- ${NC}${BBlue}力${NC}${BPurple}--- ${NC}${BRed}Anonymize your network${BPurple} ---${NC}${BBlue} 撚${NC}${BPurple}-- ${NC}\n${Green}.........................................${NC}\n${White} 數${NC}${BRed}Public IP Address: ${NC}${Black}${On_White}$(myip public)${NC}\n${White} ﲬ${NC}${BRed} Private IP Address: ${NC}${Black}${On_White}$(myip private)${NC}\n${Green}.........................................${NC}\n${BPurple} --- ${NC}${BGreen}${NC}${BPurple} --- ${NC}${BGreen}Use a${NC}${BRed} VPN${NC}${BPurple} --- ${NC}${BGreen}or a${NC}${BPurple} --- ${NC}${BRed}Socks5 PROXY${NC}${BPurple} --- ${NC}${BYellow}${NC}${BPurple} --- ${NC}" | pv -qL $((28+(-3 + RANDOM%5)))
+if [ "$TERM" = "xterm-256color" ]; then
+  function myweather() {
+    ~/.bin/myweather
+  }
 
+  if [ -x ~/.bin/myweather ]; then
+    {
+      echo -e "${Blue}$(~/.bin/myweather)${NC}"
+      sleep 1
+      echo -e "${Green}.................${NC}${BRed}${BLINK}WARNING${NC}${Green}.................${NC}
+${BPurple} --- ${NC}${BBlue}力${NC}${BPurple}--- ${NC}${BRed}Anonymize your network${BPurple} ---${NC}${BBlue} 撚${NC}${BPurple}-- ${NC}
+${Green}.........................................${NC}
+${White} 數${NC}${BRed}Public IP Address: ${NC}${Black}${On_White}$(myip public)${NC}
+${White} ﲬ${NC}${BRed} Private IP Address: ${NC}${Black}${On_White}$(myip private)${NC}
+${Green}.........................................${NC}
+${BPurple} --- ${NC}${BGreen}${NC}${BPurple} --- ${NC}${BGreen}Use a${NC}${BRed} VPN${NC}${BPurple} --- ${NC}${BGreen}or a${NC}${BPurple} --- ${NC}${BRed}Socks5 PROXY${NC}${BPurple} --- ${NC}${BYellow}${NC}${BPurple} --- ${NC}"
+    } | {
+      pv -qL $((18+(-3 + RANDOM%5)))
+      pv -qL $((28+(-3 + RANDOM%5)))
+    }
+  fi
 fi
 ```
 
