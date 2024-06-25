@@ -138,27 +138,6 @@ So you know to change it if need be. <br>
 ```bash
 #!/bin/bash
 
-# Define color codes and formatting options
-BRed='\033[1;31m'
-On_White='\033[47m'
-BLINK='\033[5m'
-END='\033[0m' # Reset color and formatting
-
-# Define the warning message with animation
-DANGER="${BRed}${On_White}${BLINK}SSH Failed Login Attempt Detected!${END}"
-
-# Check if fail2ban has detected a failed login attempt
-if grep -q "Ban " /var/log/fail2ban.log; then
-    # Display the warning message on screen
-    echo -e "$DANGER"
-fi
-```
-
-(Though that isn't really practical, just more of a "working" exercise. Here's a more reasonable way to achieve this)
-
-```bash
-#!/bin/bash
-
 # Check if fail2ban has detected a failed login attempt
 if grep -q "Ban " /var/log/fail2ban.log; then
     # Send a desktop notification using zenity
