@@ -4,12 +4,12 @@
 
 -----------------------------------------------------------------------------------------------------
 
-Description: Just some examples of what you can add to your shell prompt to make it your own. <br>
-I hope this helps anyone to create your own unique terminal prompt styles and themes.
+  Description: Just some examples of what you can add to your shell prompt to make it your own. <br>
+  I hope this helps anyone to create your own unique terminal prompt styles and themes.
 
 ## Getting started
 
-First we need to install `myip` from either the AUR or the clone the repository from Github [MyIP](https://github.com/make-github-pseudonymous-again/myip).
+  First we need to install `myip` from either the AUR or the clone the repository from Github [MyIP](https://github.com/make-github-pseudonymous-again/myip).
 
 Install from the AUR
 
@@ -25,7 +25,7 @@ cd myip
 sudo make DESTDIR=/ PREFIX=/usr install
 ```
     
-Now we make our personal bin direcotry and add it to our path. <br>
+  Now we make our personal bin direcotry and add it to our path. <br>
 This is where we will keep our custom scripts.
     
 ```bash
@@ -36,7 +36,7 @@ echo 'export PATH="$HOME/.bin:$PATH"' >> ~/.bashrc
 source ~/.bashrc
 ```
     
-Now we need to make the script `myweather` for our shell prompt. <br>
+  Next we need to make the script `myweather` for our shell prompt. <br>
 Edit **"YOUR_CITY_HERE"** to your city.
     
 ```bash
@@ -45,14 +45,14 @@ curl -w -s 'v2.wttr.in/%20%20%20%20%20%20%20%20YOUR_CITY_HERE?u&format=%l\n%20%2
 echo -e "\n"
 ```
     
-Add it to the `~/.bin` directory and make it executable.
+  Add it to the `~/.bin` directory and make it executable.
     
 ```bash
 mv myweather ~/.bin
 chmod +x ~/.bin/myweather
 ```
 
-Add these color environment variables to your `.bashrc`
+  Put these color environment variables to your `.bashrc`
 
 ```bash
 ##----------------------------------------------------------
@@ -101,7 +101,7 @@ export DANGER="${BRed}${On_White}${BLINK}" # Blinking Bold Red On White Backgrou
 ```
 ### Advanced Colorization and Animated Text
 
-Now add this function to your `.bashrc`
+  Let's put all of that together into a function for your `.bashrc` file.
 
 ```bash
 if [ "$TERM" = "xterm-256color" ]; then
@@ -128,15 +128,12 @@ ${BPurple} --- ${NC}${BGreen}${NC}${BPurple} --- ${NC}${BGreen}Use a${NC}${BR
 fi
 ```
 
-This function is going to display the **weather** for your **city** and your ***public*** and ***private*** **IP** addresses as a **warning**. <br>
+  This function is going to display the **weather** for your **city** and your ***public*** and ***private*** **IP** addresses as a **warning**. <br>
 So you know to change it if need be. <br>
-
-And this is what it should look like when all is said and done. <br>
-One clip with the script running as is and the other split up with `clear &&` added after `sleep 1` in the function.<br>
 
 ### Example for On-Screen Early Alert System
 
-Here's a working example to detect when fail2ban has detected a failed login attempt and then display a warning on the screen:
+  Here's a working example to detect when fail2ban has detected a failed login attempt and then display a warning on the screen:
 
 ```bash
 #!/bin/bash
@@ -169,26 +166,28 @@ if grep -q "Ban " /var/log/fail2ban.log; then
 fi
 ```
 
-In this modified script, we use `zenity` with the `--warning` option to display a 
+  In this modified script, we use `zenity` with the `--warning` option to display a 
 warning dialog with a message indicating that a failed login attempt has been detected. 
-The `--urgency=critical` option sets the urgency level to high, and the `--timeout=3600` 
+
+  The `--urgency=critical` option sets the urgency level to high, and the `--timeout=3600` 
 option sets the timeout to 1 hour.
 
-To run this script, you would save it to a file, for example `ssh_warning_zenity.sh`, 
+  To run this script, you would save it to a file, for example `ssh_warning_zenity.sh`, 
 give it execute permissions using `chmod +x ssh_warning_zenity.sh`, and then execute it in a terminal.
 
-Please note that `zenity` is a command-line utility that is typically available on most Linux distributions. 
-If you're using a different operating system or if `zenity` is not installed, you would
+  Please note that `zenity` is a command-line utility that is typically available on most Linux distributions. 
+
+  If you're using a different operating system or if `zenity` is not installed, you would
 need to find an equivalent command or library for sending desktop notifications on that platform.
 
-Using `zenity` provides a more interactive and user-friendly experience compared to a simple 
+  Using `zenity` provides a more interactive and user-friendly experience compared to a simple 
 text-based warning on the screen. It allows the user to quickly acknowledge the notification 
 and take appropriate action if needed.
 
-Remember to adjust the timing and path to the script in the `cron` job or `systemd` service configuration 
+  Remember to adjust the timing and path to the script in the `cron` job or `systemd` service configuration 
 file according to your specific requirements.
 
-Here's an example of how you could set up a `cron` job to run the script every minute:
+  Here's an example of how you could set up a `cron` job to run the script every minute:
 
 ```bash
 # Edit the crontab file
@@ -198,11 +197,13 @@ crontab -e
 * * * * * /path/to/ssh_warning_notify_bell.sh
 ```
 
-In this example, the `ssh_warning_notify_bell.sh` script is set to run every minute. 
-You would need to replace `/path/to/` with the actual path to the script on your system.
+  In this example, the `ssh_warning_notify_bell.sh` script is set to run every minute. 
 
-Alternatively, you could set up a `systemd` service to run the script on boot or at a specific interval. 
-Here's an example of a `systemd` service configuration file:
+  You would need to replace `/path/to/` with the actual path to the script on your system.
+
+  Alternatively, you could set up a `systemd` service to run the script on boot or at a specific interval. 
+
+  Here's an example of a `systemd` service configuration file:
 
 ```ini
 [Unit]
@@ -224,11 +225,15 @@ sudo systemctl enable ssh_warning.service
 sudo systemctl start ssh_warning.service
 ```
 
-By setting up a `cron` job or a `systemd` service, you ensure that the script runs automatically
-in the background without any user interaction. The script will check for failed login
+  By setting up a `cron` job or a `systemd` service, you ensure that the script runs automatically
+in the background without any user interaction. 
+
+  The script will check for failed login
 attempts and send desktop notifications with an audible bell if necessary.
 
 ## Visual Examples :) 
+
+  One clip with the script running as is and the other split up with `clear &&` added after `sleep 1` in the function.<br>
 
 https://user-images.githubusercontent.com/98633966/195940771-111df364-9c2b-4975-8c6e-ebcfe5bfd559.mp4
 
